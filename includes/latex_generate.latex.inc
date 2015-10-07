@@ -22,6 +22,7 @@ function latex_generate_generate($variables) {
   // Handle multiline items.
   $variables = latex_generate_break_lines($variables, 'outline');
   $variables = latex_generate_break_lines($variables, 'literature');
+  $variables['superaddress'] = str_replace("\r\n", "\\\\\\ \n ", $variables['superaddress']);
 
   $patterns = array();
   $replacements = array();
